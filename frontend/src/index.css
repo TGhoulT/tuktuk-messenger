@@ -1,0 +1,377 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* CSS переменные (будут использоваться для тем) */
+:root {
+  --bg-primary: #121212;
+  --bg-secondary: #1E1E1E;
+  --bg-tertiary: #2A2A2A;
+  --text-primary: #FFFFFF;
+  --text-secondary: #A0A0A0;
+  --accent-lime: #D4F03B;
+  --accent-yellow: #FFEA00;
+  --border-color: #333333;
+}
+
+/* Светлая тема */
+.light {
+  --bg-primary: #FFFFFF;
+  --bg-secondary: #F5F5F5;
+  --bg-tertiary: #E5E5E5;
+  --text-primary: #000000;
+  --text-secondary: #666666;
+  --accent-lime: #D4F03B;
+  --accent-yellow: #FFC107;
+  --border-color: #CCCCCC;
+}
+
+/* Глобальные сбросы */
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: system-ui, 'Segoe UI', Roboto, sans-serif;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+/* Кастомный скроллбар */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--text-secondary);
+  border-radius: 3px;
+}
+
+/* Анимированный градиент для маски (для кнопок) */
+.bg-gradient-mask {
+  background: linear-gradient(90deg, var(--accent-lime), var(--accent-yellow), var(--accent-lime));
+  background-size: 200% 100%;
+}
+
+@keyframes pulseGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  100% {
+    background-position: 200% 50%;
+  }
+}
+
+.animate-gradient-pulse {
+  animation: pulseGradient 3s linear infinite;
+}
+
+.shadow-neon {
+  box-shadow: 0 0 8px var(--accent-lime);
+}
+
+@keyframes slide-in-from-bottom {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-in.slide-in-from-bottom {
+  animation: slide-in-from-bottom 0.2s ease-out;
+}
+
+/* Анимации для переходов в настройках */
+@keyframes slide-in-from-right {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slide-out-to-left {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+
+  to {
+    transform: translateX(-20%);
+    opacity: 0;
+  }
+}
+
+@keyframes fade-in-scale {
+  from {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes fade-out-scale {
+  from {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  to {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+}
+
+.animate-slide-in-right {
+  animation: slide-in-from-right 0.25s ease-out forwards;
+}
+
+.animate-slide-out-left {
+  animation: slide-out-to-left 0.2s ease-in forwards;
+}
+
+.animate-fade-in-scale {
+  animation: fade-in-scale 0.2s ease-out forwards;
+}
+
+.animate-fade-out-scale {
+  animation: fade-out-scale 0.15s ease-in forwards;
+}
+
+@keyframes fade-slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(3px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scale-in {
+  from {
+    transform: scale(0.92);
+    opacity: 0;
+  }
+
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.animate-fade-slide-up {
+  animation: fade-slide-up 0.2s ease-out forwards;
+}
+
+.animate-scale-in {
+  animation: scale-in 0.15s ease-out forwards;
+}
+
+@keyframes slide-in-right-subtle {
+  from {
+    transform: translateX(12px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.animate-slide-in-right-subtle {
+  animation: slide-in-right-subtle 0.2s ease-out forwards;
+}
+
+.animate-slide-in-from-bottom {
+  animation: slide-in-from-bottom 0.15s ease-out;
+}
+
+/* Анимация для печатает */
+.typing-dots span {
+  display: inline-block;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background-color: currentColor;
+  margin: 0 2px;
+  animation: typing-bounce 1.4s infinite;
+}
+
+.typing-dots span:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.typing-dots span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.typing-dots span:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes typing-bounce {
+
+  0%,
+  60%,
+  100% {
+    transform: translateY(0);
+    opacity: 0.4;
+  }
+
+  30% {
+    transform: translateY(-3px);
+    opacity: 1;
+  }
+}
+
+/* Анимация для обычной панели при уходе вниз */
+.slide-down {
+  animation: slideDown 0.2s ease-out forwards;
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  to {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+}
+
+/* Анимация для SelectionBar при появлении сверху */
+.slide-up {
+  animation: slideUp 0.2s ease-out forwards;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Анимация для обычной панели при уходе вниз */
+.slide-down-to-bottom {
+  animation: slideDownToBottom 0.2s ease-out forwards;
+}
+
+@keyframes slideDownToBottom {
+  from {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  to {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+}
+
+/* Анимация для обычной панели при появлении снизу */
+.slide-up-from-bottom {
+  animation: slideUpFromBottom 0.2s ease-out forwards;
+}
+
+@keyframes slideUpFromBottom {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Анимация для панели выделения при появлении сверху */
+.slide-down-from-top {
+  animation: slideDownFromTop 0.2s ease-out forwards;
+}
+
+@keyframes slideDownFromTop {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Анимация для панели выделения при исчезновении вверх */
+.slide-up-to-top {
+  animation: slideUpToTop 0.2s ease-out forwards;
+}
+
+@keyframes slideUpToTop {
+  from {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  to {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+}
+
+@keyframes collapse-message {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+    max-height: 150px;
+    margin-bottom: 8px;
+    padding: 8px 12px;
+  }
+
+  100% {
+    transform: scale(0);
+    opacity: 0;
+    max-height: 0;
+    margin-bottom: 0;
+    padding: 0 12px;
+  }
+}
+
+.message-deleting {
+  animation: collapse-message 0.1s ease forwards;
+  overflow: hidden;
+  pointer-events: none;
+}

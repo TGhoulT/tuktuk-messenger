@@ -1,0 +1,33 @@
+{
+  "name": "tuk-tuk-frontend",
+  "private": true,
+  "version": "0.2.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@tanstack/react-query": "^5.100.10",
+    "@tanstack/react-virtual": "^3.13.26",
+    "axios": "^1.16.0",
+    "jwt-decode": "^4.0.0",
+    "react": "^19.2.6",
+    "react-dom": "^19.2.6",
+    "react-hook-form": "^7.75.0",
+    "react-router-dom": "^7.15.0",
+    "socket.io-client": "^4.8.3",
+    "zustand": "^5.0.13"
+  },
+  "devDependencies": {
+    "@types/node": "^25.7.0",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^6.0.2",
+    "autoprefixer": "^10.5.0",
+    "postcss": "^8.5.14",
+    "tailwindcss": "3.4",
+    "vite": "^8.0.13"
+  }
+}

@@ -1,0 +1,43 @@
+:root {
+    /* Базовые цвета фона (Темные, как в ZZZ) */
+    --bg-primary: #0F0F0F;
+    --bg-secondary: #1A1A1A;
+    --bg-tertiary: #242424;
+    --bg-hover: #2E2E2E;
+
+    /* Акцентные цвета ZZZ (Лаймовый и Желтый) */
+    --accent-lime: #a3ff00;
+    --accent-yellow: #ffea00;
+    --accent-gradient: linear-gradient(135deg, var(--accent-lime), var(--accent-yellow));
+
+    /* Цвета сообщений */
+    --msg-bg-user: #2E2E2E;
+    --msg-bg-friend: var(--bg-tertiary);
+    --msg-text-user: #FFFFFF;
+    --msg-text-friend: #F0F0F0;
+
+    /* Текст */
+    --text-primary: #FFFFFF;
+    --text-secondary: #A0A0A0;
+    --text-tertiary: #6A6A6A;
+
+    /* Обводки и эффекты */
+    --border-color: #333333;
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 18px;
+    --shadow-neon: 0 0 10px rgba(163, 255, 0, 0.3);
+}
+
+body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+* {
+    box-sizing: border-box;
+}

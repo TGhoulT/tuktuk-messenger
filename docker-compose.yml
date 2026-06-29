@@ -1,0 +1,32 @@
+services:
+  postgres:
+    image: postgres:17
+    container_name: messenger_postgres
+    environment:
+      POSTGRES_DB: tuk-tuk
+      POSTGRES_USER: mindedness
+      POSTGRES_PASSWORD: JigNFe-di6hNZ0C!
+      PGDATA: /var/lib/postgresql/data/pgdata
+    volumes:
+      - ./pgdata:/var/lib/postgresql/data/pgdata
+    ports:
+      - "5432:5432"
+    restart: unless-stopped
+    networks:
+      - messenger_net
+
+  redis:
+    image: redis:7-alpine
+    container_name: messenger_redis
+    ports:
+      - "6379:6379"
+    restart: unless-stopped
+    networks:
+      - messenger_net
+
+networks:
+  messenger_net:
+    driver: bridge
+
+volumes:
+  pgdata:
