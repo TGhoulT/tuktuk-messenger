@@ -50,7 +50,7 @@
 ### 1. Клонирование репозитория
 
 ```bash
-git clone https://github.com/ваш_логин/tuk-tuk.git
+git clone https://github.com/TGhoulT/tuktuk-messenger.git
 cd tuk-tuk
 ```
 
